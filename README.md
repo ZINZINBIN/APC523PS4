@@ -22,15 +22,16 @@ The derivation of the reformulation of the BVP in equation (1) as a root-finding
 ### Problem 1.c
 <div>
     <p float = 'left'>
-        <img src="./p1_c_128.png"  width="30%">
-        <img src="./p1_c_256.png"  width="30%">
-        <img src="./p1_c_512.png"  width="30%">
+        <img src="./p1_c_64.png"   width="23.5%">
+        <img src="./p1_c_128.png"  width="23.5%">
+        <img src="./p1_c_256.png"  width="23.5%">
+        <img src="./p1_c_512.png"  width="23.5%">
     </p>
 </div>
 
 <div>
     <p float = 'left'>
-        <img src="./p1_error.png"  width="100%">
+        <img src="./p1_c_err.png"  width="100%">
     </p>
 </div>
 

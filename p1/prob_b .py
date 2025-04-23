@@ -1,8 +1,3 @@
-'''
-    The entire code for Problem (b) and (c). Due to the computation time, the main code is dividied into 
-    prob_b.py and prob_c.py. 
-'''
-
 import numpy as np
 import matplotlib.pyplot as plt
 from typing import Optional
@@ -123,28 +118,6 @@ def solve_b(u_init:np.ndarray, L:np.ndarray, dx:float, N:int,  N_epoch:int, eps:
 
     return u, l2_err, inf_err, n_epoch
 
-def solve_c(u_init:np.ndarray, L:np.ndarray, dx:float, N:int,  N_epoch:int, N_iter:int, eps:float, verbose : int):
-
-    u = np.copy(u_init.reshape(-1,1))
-
-    for n_epoch in range(N_epoch):
-
-        J = generate_Jacobian(u, L)
-        Jinv = compute_inverse_Jacobian_iterative(J, eps, N_iter)
-        u = u - Jinv @ compute_g(u, L, dx, N)
-
-        # error analysis
-        l2_err = compute_l2_error(compute_g(u, L, dx, N))
-        inf_err = np.linalg.norm(compute_g(u, L, dx, N), ord=np.inf)
-
-        if l2_err < eps:
-            break
-
-        if n_epoch % verbose == 0:
-            print("Epoch: {} | L2 norm:{:.4f} | Inf norm:{:.4f}".format(n_epoch + 1, l2_err, inf_err))
-
-    return u, l2_err, inf_err, n_epoch
-
 if __name__ == "__main__":
 
     # setup
@@ -172,65 +145,3 @@ if __name__ == "__main__":
 
     print("Final epoch: {} | L2 norm:{:.4f} | Inf norm:{:.4f}".format(n_epoch + 1, l2_err, inf_err))
     plot_contourf(X, Y, u.reshape(N,N), filename = "p1_b.png", title = "u(x,y)", dpi = 120)
-
-    # Problem (c)
-    u = np.copy(u_init.reshape(-1,1))
-
-    print("\n=============== Problem (c) ==================")
-    u_64, l2_err, inf_err, n_epoch = solve_c(u_init, L, dx, N, N_epoch, N_iter, eps, verbose)
-    plot_contourf(X, Y, u_64.reshape(N,N), filename = "p1_c_64.png", title = "u(x,y) with N = 64", dpi = 120)
-    print("Final epoch: {} | L2 norm:{:.4f} | Inf norm:{:.4f}".format(n_epoch + 1, l2_err, inf_err))
-
-    # Case: N = 128
-    N = 128
-    dx = 1.0 / N
-    L = generate_laplacian_2D(N, dx=dx)
-
-    lin = np.linspace(0, 1.0, N, endpoint=True)
-    X, Y = np.meshgrid(lin, lin)
-
-    u_init = np.zeros((N, N))
-
-    u_128, l2_err, inf_err, n_epoch = solve_c(u_init, L, dx, N, N_epoch, N_iter, eps, verbose)
-
-    plot_contourf(X, Y, u_128.reshape(N,N), filename = "p1_c_128.png", title = "u(x,y) with N = 128", dpi = 120)
-    print("Final epoch: {} | L2 norm:{:.4f} | Inf norm:{:.4f}".format(n_epoch + 1, l2_err, inf_err))
-
-    # Case: N = 256
-    N = 256
-    dx = 1.0 / N
-    L = generate_laplacian_2D(N, dx=dx)
-
-    lin = np.linspace(0, 1.0, N, endpoint=True)
-    X, Y = np.meshgrid(lin, lin)
-
-    u_init = np.zeros((N, N))
-
-    u_256, l2_err, inf_err, n_epoch = solve_c(u_init, L, dx, N, N_epoch, N_iter, eps, verbose)
-
-    plot_contourf(X, Y, u_256.reshape(N,N), filename = "p1_c_256.png", title = "u(x,y) with N = 256", dpi = 120)
-    print("Final epoch: {} | L2 norm:{:.4f} | Inf norm:{:.4f}".format(n_epoch + 1, l2_err, inf_err))
-
-    # Mesh size and error relation
-    u_gt, _, _, _ = solve_b(u_init, L, dx, N, N_epoch, eps, None)
-
-    u_128 = u_128[0::2,0::2]
-    u_256 = u_256[0::4,0::4]
-    u_gt = u_gt[0::8,0::8]
-
-    N_list = [64, 128, 256]
-    err_list = [
-        np.linalg.norm(u_64 - u_gt, ord="fro"),
-        np.linalg.norm(u_128 - u_gt, ord="fro"),
-        np.linalg.norm(u_256 - u_gt, ord="fro"),
-    ]
-
-    fig, ax = plt.subplots(1, 1, figsize=(6, 4), facecolor="white", dpi=120)
-    ax.plot(N_list, err_list, 'ro', label = "L2 Norm")
-    ax.set_xlabel("N")
-    ax.set_ylabel("L2 Norm")
-    ax.set_title("N vs Accuracy")
-    ax.legend()
-    fig.tight_layout()
-    fig.savefig("p1_err.png", dpi=120)
-    plt.close(fig)
