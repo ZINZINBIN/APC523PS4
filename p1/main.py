@@ -53,36 +53,50 @@ def compute_g(u:np.ndarray, L:np.ndarray, dx:float, N_mesh:int):
     res = res.reshape(-1,1)
     return res
 
+def Jacobi(A:np.ndarray, b:np.ndarray, x0:np.ndarray,eps:float, n_epoch:int):
+    
+    n = A.shape[0]
+    x = np.zeros(n) if x0 is None else x0.copy()
+    w = 2/3
+
+    D = np.diag(np.diag(A))
+    D_inv = np.diag(1.0 / np.diag(A))
+    L = np.tril(A-D)
+    U = np.triu(A-D)
+
+    for k in range(n_epoch):
+        x_new = w * D_inv @ (b - (L+U)@x) + (1-w) * x
+
+        if np.linalg.norm(x_new - x) / n < eps:
+            break
+
+        x = x_new
+
+    return x_new
+
 def GaussSeidel(A:np.ndarray, b:np.ndarray, x0:np.ndarray,eps:float, n_epoch:int):
     n = A.shape[0]
     x = np.zeros(n) if x0 is None else x0.copy()
 
     for k in range(n_epoch):
         x_new = x.copy()
-        
+
         for i in range(n):
             sigma = np.dot(A[i, :i], x_new[:i]) + np.dot(A[i, i + 1 :], x[i + 1 :])
             x_new[i] = (b[i] - sigma) / A[i, i]
 
         if np.linalg.norm(x_new - x, ord=np.inf) < eps:
             break
-        
+
         x = x_new
-        
+
     return x_new
 
-def compute_inverse_Jacobian_iterative(J:np.ndarray, eps:float, n_epoch:int):
 
+def compute_inverse_Jacobian_iterative(J: np.ndarray, eps: float, n_epoch: int):
     n = J.shape[0]
     J_inv = np.zeros_like(J)
-    
-    for i in range(n):
-        b = np.zeros(n).reshape(-1,1)
-        b[i] = 1.0
-        x_init = np.zeros(n).reshape(-1,1)
-        r = GaussSeidel(J, b, x_init, n_epoch=n_epoch, eps=eps)
-        J_inv[:,i] = r
-
+    J_inv = Jacobi(J, np.eye(n), J_inv, eps, n_epoch)
     return J_inv
 
 def compute_l2_error(x:np.ndarray):
@@ -155,7 +169,7 @@ if __name__ == "__main__":
     dx =  1.0 / N
     verbose = 4
 
-    # Laplacian 2D 4th order
+    # Laplacian 2D
     L = generate_laplacian_2D(N, dx=dx)
 
     # mesh

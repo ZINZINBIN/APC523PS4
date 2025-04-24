@@ -128,10 +128,10 @@ if __name__ == "__main__":
     N_iter = 32
     verbose = 1
 
-    print("\n=============== Problem (c): N = 64 ==================")
+    print("\n=============== Problem (c): N = 512  =================")
 
-    # Case: N = 64
-    N = 64
+    # Case: N = 512
+    N = 512
     dx = 1.0 / N
     L = generate_laplacian_2D(N, dx=dx)
 
@@ -142,7 +142,7 @@ if __name__ == "__main__":
 
     u, l2_err, inf_err, n_epoch = solve_c(u_init, L, dx, N, N_epoch, N_iter, eps, verbose)
 
-    plot_contourf(X, Y, u.reshape(N,N), filename = "p1_c_64.png", title = "u(x,y) with N = 64", dpi = 120)
-    print("N = 64 | Final epoch: {} | L2 norm:{:.4f} | Inf norm:{:.4f}".format(n_epoch + 1, l2_err, inf_err))
+    plot_contourf(X, Y, u.reshape(N,N), filename = "p1_c_512.png", title = "u(x,y) with N = 512", dpi = 120)
+    print("N = 512 | Final epoch: {} | L2 norm:{:.4f} | Inf norm:{:.4f}".format(n_epoch + 1, l2_err, inf_err))
 
-    np.save("./p1/u_64.npy", u.reshape(N,N))
+    np.save("./p1/u_512.npy", u.reshape(N, N))
