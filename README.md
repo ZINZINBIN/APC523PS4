@@ -3,10 +3,10 @@
 - Github repository for assignment 4 in APC523 is here: <a href = "https://github.com/ZINZINBIN/APC523PS4">https://github.com/ZINZINBIN/APC523PS4</a>
 - Problem 1-(a), Problem 2, Problem 3-(a), and 3-(b) are noted as handwriting. The solution is uploaded via handwriting.pdf.
 
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!-- <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: "none" });
-</script>
+</script> -->
 
 ## Problem 1. Eliptic BVP
 ### Problem 1.a
@@ -22,7 +22,7 @@ In this problem, the Newton-Rapson method with LU decomposition and 5-point seco
 </div>
 
 ### Problem 1.c
-As a iterative method to compute the inverse of Jacobian for $g(u)$, weighted Jacobi method is utilized. The parameter $w$ is set as $2/3$, while the convergence criteria is set as $10^{-8}$ with $N_{iter} = 32$. In this problem, $N_{mesh} = 64, 128, 256$ are given.
+As a iterative method to compute the inverse of Jacobian for $g(u)$, weighted Jacobi method was originally utilized and we could observe that this method can also find the solution. However, if the size of the mesh become larger, the computational cost and memory required is also larger so that our resources is not enough then. Therefore, we instead use scipy.sparse matrix and functions with generalized minimal residual iteration to get $J^{-1}g(u)$ direclty from solving $Jx = g(u)$, instead of solving $J^{-1}$ and then multipying $g(u)$. The convergence criteria for computing $J^{-1}g(u)$ is $10^{-8}$ with $N_{iter} = 16$. Then, all the iterative processes are set as $N_{epoch} = 64$. In this problem, $N_{mesh} = 64, 128, 256$ are given. The below figure shows the contour plot of the solution with different mesh size.
 
 <div>
     <p float = 'left'>
@@ -33,7 +33,7 @@ As a iterative method to compute the inverse of Jacobian for $g(u)$, weighted Ja
     </p>
 </div>
 
-The L2 norm error between the above computed $u(x,y)$ and the ground-truth $u(x,y)$ with $N_{mesh} = 512$ as a function of $N_{mesh}$ is given below. 
+The L2 norm error between the above computed $u(x,y)$ and the ground-truth $u(x,y)$ with $N_{mesh} = 512$ as a function of $N_{mesh}$ is given below. We can observe that the L2 norm error is proportional to $\frac{1}{N^2}$, which can be checked by log-scale graph. 
 
 <div>
     <p float = 'left'>

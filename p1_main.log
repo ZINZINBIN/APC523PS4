@@ -1,0 +1,123 @@
+
+=============== Problem (b) ==================
+Epoch: 1 | L2 norm:64.0000 | Inf norm:1.0000
+Epoch: 2 | L2 norm:0.6361 | Inf norm:0.0219
+Epoch: 3 | L2 norm:0.0001 | Inf norm:0.0000
+Final epoch: 4 | L2 norm:0.0000 | Inf norm:0.0000
+
+=============== Problem (c): N = 64 ==================
+Epoch: 1 | L2 norm:45.3156 | Inf norm:1.5591
+Epoch: 2 | L2 norm:0.1850 | Inf norm:0.0102
+Epoch: 3 | L2 norm:0.0264 | Inf norm:0.0020
+Epoch: 4 | L2 norm:0.0262 | Inf norm:0.0017
+Epoch: 5 | L2 norm:0.0259 | Inf norm:0.0015
+Epoch: 6 | L2 norm:0.0254 | Inf norm:0.0015
+Epoch: 7 | L2 norm:0.0260 | Inf norm:0.0017
+Epoch: 8 | L2 norm:0.0260 | Inf norm:0.0015
+Epoch: 9 | L2 norm:0.0262 | Inf norm:0.0015
+Epoch: 10 | L2 norm:0.0253 | Inf norm:0.0015
+Epoch: 11 | L2 norm:0.0262 | Inf norm:0.0015
+Epoch: 12 | L2 norm:0.0256 | Inf norm:0.0015
+Epoch: 13 | L2 norm:0.0261 | Inf norm:0.0015
+Epoch: 14 | L2 norm:0.0255 | Inf norm:0.0015
+Epoch: 15 | L2 norm:0.0261 | Inf norm:0.0017
+Epoch: 16 | L2 norm:0.0257 | Inf norm:0.0015
+Epoch: 17 | L2 norm:0.0262 | Inf norm:0.0015
+Epoch: 18 | L2 norm:0.0261 | Inf norm:0.0015
+Epoch: 19 | L2 norm:0.0263 | Inf norm:0.0015
+Epoch: 20 | L2 norm:0.0260 | Inf norm:0.0015
+Epoch: 21 | L2 norm:0.0261 | Inf norm:0.0015
+Epoch: 22 | L2 norm:0.0265 | Inf norm:0.0015
+Epoch: 23 | L2 norm:0.0260 | Inf norm:0.0015
+Epoch: 24 | L2 norm:0.0262 | Inf norm:0.0022
+Epoch: 25 | L2 norm:0.0257 | Inf norm:0.0017
+Epoch: 26 | L2 norm:0.0264 | Inf norm:0.0015
+Epoch: 27 | L2 norm:0.0258 | Inf norm:0.0015
+Epoch: 28 | L2 norm:0.0261 | Inf norm:0.0015
+Epoch: 29 | L2 norm:0.0252 | Inf norm:0.0015
+Epoch: 30 | L2 norm:0.0262 | Inf norm:0.0015
+Epoch: 31 | L2 norm:0.0259 | Inf norm:0.0015
+Epoch: 32 | L2 norm:0.0266 | Inf norm:0.0017
+N = 64 | Final epoch: 32 | L2 norm:0.0266 | Inf norm:0.0017
+
+=============== Problem (c): N = 128  =================
+Epoch: 1 | L2 norm:999.6229 | Inf norm:17.1150
+Epoch: 2 | L2 norm:368.1120 | Inf norm:6.6717
+Epoch: 3 | L2 norm:128.9633 | Inf norm:2.3664
+Epoch: 4 | L2 norm:44.1385 | Inf norm:0.8217
+Epoch: 5 | L2 norm:14.9841 | Inf norm:0.2831
+Epoch: 6 | L2 norm:5.0792 | Inf norm:0.0988
+Epoch: 7 | L2 norm:1.7298 | Inf norm:0.0348
+Epoch: 8 | L2 norm:0.6100 | Inf norm:0.0141
+Epoch: 9 | L2 norm:0.2716 | Inf norm:0.0080
+Epoch: 10 | L2 norm:0.2104 | Inf norm:0.0059
+Epoch: 11 | L2 norm:0.2071 | Inf norm:0.0078
+Epoch: 12 | L2 norm:0.2070 | Inf norm:0.0059
+Epoch: 13 | L2 norm:0.2074 | Inf norm:0.0068
+Epoch: 14 | L2 norm:0.2052 | Inf norm:0.0068
+Epoch: 15 | L2 norm:0.2044 | Inf norm:0.0059
+Epoch: 16 | L2 norm:0.2042 | Inf norm:0.0059
+Epoch: 17 | L2 norm:0.2057 | Inf norm:0.0068
+Epoch: 18 | L2 norm:0.2053 | Inf norm:0.0068
+Epoch: 19 | L2 norm:0.2075 | Inf norm:0.0078
+Epoch: 20 | L2 norm:0.2058 | Inf norm:0.0068
+Epoch: 21 | L2 norm:0.2058 | Inf norm:0.0068
+Epoch: 22 | L2 norm:0.2058 | Inf norm:0.0059
+Epoch: 23 | L2 norm:0.2038 | Inf norm:0.0068
+Epoch: 24 | L2 norm:0.2040 | Inf norm:0.0059
+Epoch: 25 | L2 norm:0.2070 | Inf norm:0.0059
+Epoch: 26 | L2 norm:0.2055 | Inf norm:0.0068
+Epoch: 27 | L2 norm:0.2060 | Inf norm:0.0078
+Epoch: 28 | L2 norm:0.2050 | Inf norm:0.0059
+Epoch: 29 | L2 norm:0.2060 | Inf norm:0.0078
+Epoch: 30 | L2 norm:0.2051 | Inf norm:0.0078
+Epoch: 31 | L2 norm:0.2072 | Inf norm:0.0059
+Epoch: 32 | L2 norm:0.2067 | Inf norm:0.0059
+N = 128 | Final epoch: 32 | L2 norm:0.2067 | Inf norm:0.0059
+
+=============== Problem (c): N = 256  =================
+Epoch: 1 | L2 norm:5416.1914 | Inf norm:48.5339
+Epoch: 2 | L2 norm:2976.8789 | Inf norm:20.3591
+Epoch: 3 | L2 norm:2171.0505 | Inf norm:14.5082
+Epoch: 4 | L2 norm:1678.6737 | Inf norm:12.4802
+Epoch: 5 | L2 norm:1304.8916 | Inf norm:10.2801
+Epoch: 6 | L2 norm:1011.1016 | Inf norm:8.1591
+Epoch: 7 | L2 norm:780.0211 | Inf norm:6.3725
+Epoch: 8 | L2 norm:599.1971 | Inf norm:4.9278
+Epoch: 9 | L2 norm:458.5545 | Inf norm:3.7949
+Epoch: 10 | L2 norm:349.8017 | Inf norm:2.9088
+Epoch: 11 | L2 norm:266.1485 | Inf norm:2.2172
+Epoch: 12 | L2 norm:202.0935 | Inf norm:1.6972
+Epoch: 13 | L2 norm:153.2133 | Inf norm:1.2932
+Epoch: 14 | L2 norm:116.0173 | Inf norm:0.9804
+Epoch: 15 | L2 norm:87.7820 | Inf norm:0.7456
+Epoch: 16 | L2 norm:66.3809 | Inf norm:0.5677
+Epoch: 17 | L2 norm:50.1763 | Inf norm:0.4417
+Epoch: 18 | L2 norm:37.9060 | Inf norm:0.3352
+Epoch: 19 | L2 norm:28.6125 | Inf norm:0.2551
+Epoch: 20 | L2 norm:21.5596 | Inf norm:0.1966
+Epoch: 21 | L2 norm:16.2175 | Inf norm:0.1509
+Epoch: 22 | L2 norm:12.1587 | Inf norm:0.1162
+Epoch: 23 | L2 norm:9.0860 | Inf norm:0.0926
+Epoch: 24 | L2 norm:6.7509 | Inf norm:0.0693
+Epoch: 25 | L2 norm:4.9794 | Inf norm:0.0570
+Epoch: 26 | L2 norm:3.6756 | Inf norm:0.0431
+Epoch: 27 | L2 norm:2.7426 | Inf norm:0.0360
+Epoch: 28 | L2 norm:2.1001 | Inf norm:0.0290
+Epoch: 29 | L2 norm:1.7885 | Inf norm:0.0246
+Epoch: 30 | L2 norm:1.7019 | Inf norm:0.0273
+Epoch: 31 | L2 norm:1.6629 | Inf norm:0.0273
+Epoch: 32 | L2 norm:1.6459 | Inf norm:0.0234
+N = 256 | Final epoch: 32 | L2 norm:1.6459 | Inf norm:0.0234
+
+=============== Problem (c): N = 512  =================
+Traceback (most recent call last):
+  File "/home/jk9075/APC523PS4/p1/main.py", line 260, in <module>
+    u, l2_err, inf_err, n_epoch = solve_c(u_init, L, dx, N, N_epoch, N_iter, eps, verbose)
+                                  ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jk9075/APC523PS4/p1/main.py", line 121, in solve_c
+    J = generate_Jacobian(u, L)
+  File "/home/jk9075/APC523PS4/p1/main.py", line 30, in generate_Jacobian
+    J = laplacian - 4 * np.diag(np.power(u.ravel(),3))
+                    ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 256. GiB for an array with shape (262144, 262144) and data type float32
