@@ -16,6 +16,6 @@ module purge
 module load anaconda3/2024.6
 
 conda activate
-srun --ntasks=1 --exclusive --cpus-per-task=8 --mem-per-cpu=24G  python3 p1/main.py &
+srun --ntasks=1 --exclusive --cpus-per-task=8 --mem-per-cpu=16G python3 p1/main.py &
 srun --ntasks=1 --exclusive --cpus-per-task=8 --mem-per-cpu=16G python3 p3/main.py &
 wait
